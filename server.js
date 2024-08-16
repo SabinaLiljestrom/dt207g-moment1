@@ -38,12 +38,15 @@ app.post("/add-course", (req, res) => {
     let coursecode = req.body.coursecode;
     let coursename = req.body.coursename;
     let syllabus = req.body.syllabus;
-    let progression = req.body.progression;
+    let progression = req.body.progression; 
     let error = "";
 
     // Kontrollera input
     if (coursecode !== "" && coursename !== "" && syllabus !== "" && progression !== "") {
-        
+        //lagra i databas om korrekt
+        const stmt = db.prepare("INSERT INTO cv(coursecode, coursename, syllabus, progression) VALUES (?, ?, ?, ?);");
+        stmt.run(coursecode, coursename, syllabus, progression);
+        stmt.finalize();
     } else {
         error = "Du måste fylla i alla fält";
     }
