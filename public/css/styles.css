@@ -1,0 +1,45 @@
+body {
+    background-color: beige;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+    line-height: 1.7em;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+main {
+    background-color: #fff;
+    padding:5%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+
+/* Styla navigationsmenyn */
+nav ul {
+    list-style-type: none;  /* Ta bort punkter framför listobjekten */
+    padding: 0;             /* Ta bort standard padding */
+    margin: 0;              /* Ta bort standard margin */
+    display: flex;          /* Använd flexbox för horisontell linjering */
+    justify-content: center; /* Centrera menyn */
+    background-color: #333; /* Bakgrundsfärg för menyn */
+}
+
+nav ul li {
+    margin: 0 15px; /* Mellanrum mellan menyobjekten */
+}
+
+nav ul li a {
+    text-decoration: none; /* Ta bort understrykning */
+    color: white; /* Färg på texten */
+    padding: 10px 20px; /* Inre avstånd i länkarna */
+    display: block; /* Gör länkarna klickbara över hela området */
+    font-family: Arial, sans-serif; /* Font stil */
+    font-size: 16px; /* Storlek på texten */
+}
+
+nav ul li a:hover {
+    background-color: #575757; /* Bakgrundsfärg vid hovring */
+}
