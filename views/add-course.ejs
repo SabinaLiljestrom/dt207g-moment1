@@ -18,6 +18,9 @@
         <main>
             <h1>Lägg till en ny kurs</h1>
             <form method="post">
+                <% if(error!= ""){ %>
+                    <p class="error"><%=error%></p>
+                <%}%>
                 <label for ="coursecode">Kurskod:</label>
                 <br>
                 <input type="text" id="coursecode" name="coursecode">

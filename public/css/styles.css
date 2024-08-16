@@ -43,3 +43,14 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #575757; /* Bakgrundsfärg vid hovring */
 }
+
+input[type=text], textarea {
+    width: 80%;
+   padding: 1%;
+    border-radius: 4px;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
