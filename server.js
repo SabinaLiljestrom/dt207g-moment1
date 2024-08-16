@@ -19,7 +19,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // routing
 app.get("/", (req, res) => {
-    res.render("index");
+    db.all( "SELECT * FROM cv;", (err, rows )=> {
+        if (err){
+            console.error(err.message);
+        }
+    res.render("index", {
+        error: "",
+        rows: rows
+    });
+});
 });
 
 app.get("/add-course", (req, res) => {
