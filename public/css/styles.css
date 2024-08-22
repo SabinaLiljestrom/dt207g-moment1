@@ -93,7 +93,7 @@ tr {
         font-size: 14px;
     }
 
-    /* Dölja texten "Tillagt den" helt på mycket små skärmar */
+    /* Döljer visa delar helt på mycket små skärmar */
     th:nth-child(5), td:nth-child(5),  th:nth-child(3), td:nth-child(3), th:nth-child(4), td:nth-child(4)   {
         display: none;
     }
@@ -109,6 +109,10 @@ tr {
     tr {
         line-height: 1.2;
     }
+    .ER {
+        max-width: 90%; /* Minska bildens bredd till 90% av containerens bredd */
+        margin: 10px auto; /* Lägg till lite marginal runt bilden */
+    }
 }
 /* Extra marginal för luftigare layout */
 tr + tr {
@@ -123,4 +127,10 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+.ER {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
