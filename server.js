@@ -12,14 +12,14 @@ const db = new sqlite3.Database("./db/cv.db");
 
 // inställningar
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // routing
 app.get("/", (req, res) => {
-    db.all( "SELECT * FROM cv;", (err, rows )=> {
+    db.all( "SELECT * FROM cv ORDER BY id DESC;", (err, rows )=> {
         if (err){
             console.error(err.message);
         }

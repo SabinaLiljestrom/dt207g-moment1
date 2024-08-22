@@ -2,7 +2,7 @@ body {
     background-color: beige;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.2em;
-    line-height: 1.7em;
+    line-height: 0.8em;
 }
 
 .container {
@@ -53,4 +53,15 @@ input[type=text], textarea {
 .error {
     color: red;
     font-weight: bold;
+}
+
+article {
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.info {
+    font-size:0.8em;
+    color: #666;
 }

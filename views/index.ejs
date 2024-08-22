@@ -20,10 +20,11 @@
             <% if (locals.rows.length > 0) { %>
                 <% locals.rows.forEach((row) => { %>
                     <article>
-                        <p><%= row.coursecode %></p>
-                        <p><%= row.coursename %></p>
-                        <p><%= row.syllabus %></p>
-                        <p><%= row.progression %></p>
+                        <p>Kurskod: <%= row.coursecode %></p>
+                        <p>Kursnamn: <%= row.coursename %></p>
+                        <p>Länk till kursplan: <%= row.syllabus %></p>
+                        <p>Progression: <%= row.progression %></p>
+                        <p class="info">Tillagt den:  <%= row.posted %></p>
                     </article>
                 <% }); %>
             <% } %>
