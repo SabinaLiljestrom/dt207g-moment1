@@ -18,17 +18,35 @@
         <main>
             <h1>Sparade kurser</h1>
             <% if (locals.rows.length > 0) { %>
-                <% locals.rows.forEach((row) => { %>
-                    <article>
-                        <p>Kurskod: <%= row.coursecode %></p>
-                        <p>Kursnamn: <%= row.coursename %></p>
-                        <p>Länk till kursplan: <%= row.syllabus %></p>
-                        <p>Progression: <%= row.progression %></p>
-                        <p class="info">Tillagt den:  <%= row.posted %></p>
-                    </article>
-                <% }); %>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Kurskod</th>
+                            <th>Kursnamn</th>
+                            <th>Länk kursplan</th>
+                            <th>Progression</th>
+                            <th>Tillagt den</th>
+                            <th>Åtgärd</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% locals.rows.forEach((row) => { %>
+                            <tr>
+                                <td><%= row.coursecode %></td>
+                                <td><%= row.coursename %></td>
+                                <td><a href="<%= row.syllabus %>">Visa kursplan</a></td>
+                                <td><%= row.progression %></td>
+                                <td><%= row.posted %></td>
+                                <td><a href="/delete/<%= row.id %>">Radera</a></td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            <% } else { %>
+                <p>Inga kurser har sparats än.</p>
             <% } %>
         </main>
     </div>
-</body>
-</html>
+    </body>
+    </html>
+    

@@ -8,6 +8,7 @@ body {
 .container {
     max-width: 960px;
     margin: 0 auto;
+    line-height: 1.2em;
 }
 
 main {
@@ -55,13 +56,71 @@ input[type=text], textarea {
     font-weight: bold;
 }
 
-article {
+table{
     border: 1px solid #ccc;
     padding: 1em;
     margin-bottom: 1em;
 }
 
-.info {
-    font-size:0.8em;
-    color: #666;
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Lägg till streck mellan sektionerna */
+th, td {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Gör raderna luftigare */
+tr {
+    line-height: 1.5;
+}
+/* Media queries för mobilanpassning */
+@media (max-width: 768px) {
+    /* Gör tabellen horisontellt skrollbar */
+    .container {
+        overflow-x: auto;
+    }
+
+    /* Förminska padding i tabellen */
+    th, td {
+        padding: 8px;
+    }
+
+    /* Ändra textstorlek för att passa mindre skärmar */
+    th, td {
+        font-size: 14px;
+    }
+
+    /* Dölja texten "Tillagt den" helt på mycket små skärmar */
+    th:nth-child(5), td:nth-child(5),  th:nth-child(3), td:nth-child(3), th:nth-child(4), td:nth-child(4)   {
+        display: none;
+    }
+   
+    
+    /* Gör så att kurskod och kursnamn tar upp mer plats */
+    th:nth-child(1), td:nth-child(1),
+    th:nth-child(2), td:nth-child(2) {
+        width: 40%;
+    }
+
+    /* Justera radavstånd och marginaler för små skärmar */
+    tr {
+        line-height: 1.2;
+    }
+}
+/* Extra marginal för luftigare layout */
+tr + tr {
+    margin-top: 10px;
+}
+
+/* Styling för länkar */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }

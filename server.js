@@ -65,6 +65,16 @@ app.post("/add-course", (req, res) => {
     });
 });
 
+app.get("/delete/:id", (req, res)=> {
+    let id = req.params.id;
+    //radera inlägg
+    db.run("DELETE FROM cv WHERE id=?", id, (err)=>{
+        if (err){
+            console.error(err.message);
+        }
+        res.redirect("/");
+    })
+})
 // Starta applikationen
 app.listen(port, () => {
     console.log("Application started on port: " + port);
